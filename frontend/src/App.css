@@ -1,0 +1,356 @@
+*{
+  font-family: 'Poppins';
+}
+
+.btn a{
+  color: white !important;
+}
+
+.btn a:hover{
+  text-decoration: none;
+  color: #3ec2ff !important;
+  text-shadow: 0 0 5px #3ec2ff !important;
+}
+
+
+body{
+  background-color: white;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 50px; 
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 80px;
+}
+
+/* NavBar */
+
+
+.nav{
+padding: 0 100px;
+position: sticky;
+}
+
+.login .ErrMessage{
+  color: red;
+}
+
+
+.navbar-brand{
+  font-size: 70px;
+  font-weight: 600;
+  margin-left: 50px;
+}
+
+.navbar .collapse{
+margin-right: 50px;
+}
+
+.navbar .collapse a{
+  font-size: 25px;
+  margin-left: 100px;
+  font-weight: 400;
+}
+
+
+/* Footer Css */
+
+footer{
+
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+  
+}
+
+footer a{
+background-color: none !important;
+color: black !important;
+}
+
+/* Home */
+
+
+
+.homePara p{
+color: black;
+margin-top: 6%;
+margin-bottom: 2%;
+font-size: 40px
+}
+
+.homePara .btn{
+  font-size: 20px;
+  padding: 5px 50px;
+  margin-left: 10px;
+  
+}
+
+.homePara  .btn:hover{
+  color: #3ec2ff !important;
+  text-shadow: 0 0 5px #3ec2ff !important;
+}
+
+
+
+/* home lines */
+
+#light{
+  position: relative;
+  margin-top: 30px;
+  top: auto;
+}
+#lineh1{
+  position: absolute;
+  left: 0;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 4s 5s infinite linear;
+}
+#lineh2{
+  position: absolute;
+  left: 0;
+  top: 40px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 5s 0.5s infinite linear;
+}
+#lineh3{
+  position: absolute;
+  left: 0;
+  top: 70px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 5s 2s infinite linear;
+}
+#lineh4{
+  position: absolute;
+  right: 0;
+  top: 100px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 5s 1s infinite linear;
+}
+#lineh5{
+  position: absolute;
+  left: 0;
+  top: 130px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 5s 4s infinite linear;
+}
+#lineh6{
+  position: absolute;
+  right: 0;
+  top: 160px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 4s 1s infinite linear;
+}
+#lineh7{
+  position: absolute;
+  right: 0;
+  top: 190px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 4s 0s infinite linear;
+}
+#lineh8{
+  position: absolute;
+  left: 0;
+  top: 220px;
+  height: 10px;
+  background: #3ec2ff;
+  animation: lineH 4s 1.5s infinite linear;
+}
+
+@keyframes lineH{
+  0%{
+      width: 0%;
+  }
+  100%{
+width: 95%;opacity: 0;
+}
+}
+
+
+.login{
+  margin: 160px;
+  width: 500px;
+}
+
+.login .btn:hover{
+  color: #3ec2ff !important;
+  text-shadow: 0 0 5px #3ec2ff !important;
+}
+
+
+.signUp{
+  margin: 40px;
+  width: 500px;
+}
+
+
+.signUp .btn:hover{
+  color: #3ec2ff !important;
+  text-shadow: 0 0 5px #3ec2ff !important;
+}
+
+.dashboard{
+  margin-top: 3%;
+}
+.dashboard .cards a{
+  margin: 10px;
+  text-decoration: none;
+}
+
+.dashboard .card-body {
+  width:  400px !important;
+  height: 200px;
+}
+
+
+.quizLib table .btn{
+  padding: 8px;
+
+}
+
+.quizLib .container {
+  max-height:400px !important;
+  overflow: auto !important;
+}
+
+
+.userAttempts .container {
+  max-height:400px !important;
+  overflow: auto !important;
+}
+
+.userQuizes .container{
+  max-height:400px !important;
+  overflow: auto !important;
+}
+
+.leaderboard .container{
+  max-height: 300px !important;
+  overflow: auto;
+}
+
+.userQuizes .container table .pub{
+margin-right: 100px;
+margin-left: 30px;
+width: 100px;
+}
+
+.userQuizes .container table{
+  width: 800px;
+  margin-left: 160px;
+}
+
+.addQuiz form button{
+  margin-left:  20px ;
+}
+
+.account .container .card{
+  width: 400px !important;
+  height: 500px;
+  font-size: 20px;
+}
+
+.quiz .test{
+  margin-top:  120px  !important;
+}
+
+.quiz .quizNum{
+  max-width: 360px;
+  margin: 40px;
+}
+
+.quiz .quizNum .card{
+  min-width: 60px !important;
+  min-height: 40px;
+  margin: 7px;
+  margin-top: 0px;
+
+}
+
+
+@media screen and (max-width: 1200px) {
+  .userQuizes .container table{
+
+      margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .quiz .row{
+      margin-top:  0px  !important;
+  }
+  .quiz .quizNum{
+      margin-left: 70px;
+  }
+  
+}
+
+@media screen and (max-width: 995px) {
+  .userQuizes .container table{
+
+      margin-left: 10px;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  .dashboard .d-flex{
+      display: block !important;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .login {
+     width: auto;
+  }
+  .signUp{
+      width: auto;
+  }
+  .userAttempts{
+      font-size: smaller;
+  }
+  .quiz .quizNum{
+      margin: 45px;
+  }
+  
+}
+@media screen and (max-width: 530px) {
+
+  #light{
+      margin-bottom: 50% !important;
+}
+}
+
+
+@media screen and (max-width: 420px) {
+.dashboard .card-body{
+  width: 300px !important;
+}
+.quizLib table{
+  font-size: smaller;
+
+}
+}
+
+@media screen and (max-width: 320px) {
+  .dashboard .card-body{
+      width: 200px !important;
+  }
+  }
+
+
