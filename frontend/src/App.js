@@ -9,6 +9,7 @@ import Account from './components/Account'
 import AddQuiz from './components/AddQuiz'
 import UserQuizes from './components/UserQuizes';
 import ViewQuiz from './components/ViewQuiz'
+import QuizLibrary from './components/QuizLibrary';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/AddQuiz' element = {<AddQuiz/>}/>
           <Route path='/UserQuizes' element = {<UserQuizes/>} />
           <Route path='/viewQuiz' element = {<ViewQuiz/>} />
+          <Route path='/QuizLibrary' element = {<QuizLibrary/>} />
         </Routes>
         <Footer />
       </div>

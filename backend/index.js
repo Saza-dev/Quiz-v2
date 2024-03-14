@@ -68,6 +68,12 @@ app.post('/viewQuiz',(req,res)=>{
     .catch(err => res.json(err))
 })
 
+app.post('/library',(req,res)=>{
+    quizModel.find({quizStatus:"public"})
+    .then(quiz=> res.json(quiz))
+    .catch(err => res.json(err))
+})
+
 app.patch('/updateStatus',(req,res)=>{
     const{QID,status}=req.body
     quizModel.updateOne({_id:QID},{quizStatus:status})
