@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const userModel = require('./models/User')
 const quizModel = require('./models/Quiz')
+const attemptModel = require('./models/Attempts')
 
 
 const app=express();
@@ -11,7 +12,7 @@ app.use(cors())
 
 mongoose.connect("mongodb://127.0.0.1:27017/quizDB-V2")
 
-
+// USER Model
 app.post('/Signup',(req,res)=>{
     userModel.create(req.body)
     .then(users => res.json(users))
@@ -48,6 +49,9 @@ app.post('/Account',(req,res)=>{
 })
 
 
+
+
+// Quiz Model
 app.post('/newQuiz',(req,res)=>{
     quizModel.create(req.body)
     .then(res.send("Question Added"))
@@ -82,6 +86,34 @@ app.patch('/updateStatus',(req,res)=>{
 })
 
 
+// AttemptModel
+
+app.post('/newAttempt',(req,res)=>{
+    attemptModel.create(req.body)
+    .then(res.send("Attempted"))
+    .catch(err => res.json(err))
+})
+
+
+
+
+//attemptModel + quizModel
+app.post('/attempt',(req,res)=>{
+    const {QID} = req.body
+    const toSend = {quizDetails:{},attempts:{}}
+    console.log(req.body)
+    attemptModel.find({quizID:QID})
+    .then(data=>{
+        toSend.attempts=data
+        quizModel.find({_id:QID})
+            .then(quiz=> {
+                toSend.quizDetails=quiz
+                res.json(toSend)
+            })
+    })
+
+    
+})
 
 
 

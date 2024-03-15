@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBarTwo from "./NavBarTwo";
 import axios from "axios";
+import {useNavigate } from "react-router-dom";
 
 function QuizLibrary() {
   const [data, setData] = useState([]);
@@ -12,29 +13,26 @@ function QuizLibrary() {
     });
   }, []);
 
+  const navigate=useNavigate()
+
+  function attempt(id){
+    localStorage.setItem("QID",id)
+    navigate("/attempt")
+  }
+
+  
+
 
 
   if (data.length===0) return "loading..."
 
+  console.log(data)
 
   return (
     <div>
       <NavBarTwo />
       <div className="container  mt-5">
-        <div className="input-group">
-          <input
-            type="search"
-            className="form-control rounded"
-            placeholder="Question Name"
-            aria-label="Search"
-            aria-describedby="search-addon"
-          />
-          <button type="button" className="btn btn-dark" data-mdb-ripple-init>
-            search
-          </button>
-        </div>
-
-        <div className="text-center mt-3">
+        <div className="text-center mt-5 mb-5">
           <h4>Here You can find all the quizes available in Qbit</h4>
         </div>
       </div>
@@ -54,17 +52,14 @@ function QuizLibrary() {
 
             
             <tbody>
-                {data.map((quizes,index)=>(
-
-
-
+            {data.map((quizes,index)=>(
             <tr key={index}>
                 <th scope="row">{index+1}</th>
                 <td>{quizes.quizName}</td>
                 <td>{quizes.difficulty}</td>
                 <td>{quizes.owner}</td>
                 <td className="btn btn-dark">
-                  <a href="/attempt">Attempt</a>
+                  <a onClick={()=>attempt(quizes._id)}>Attempt</a>
                 </td>
             </tr>
 
